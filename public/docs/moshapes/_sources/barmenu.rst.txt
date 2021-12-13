@@ -1,0 +1,18 @@
+Bar Menu
+========
+
+This is an easy access menu for creating shapes as well as using Mo' Shapes tools.
+
+Tools included in the latest version are as follows:
+
+- `Load Shapes <./tools.html#load-shapes>`__
+- `Remove Shapes <./tools.html#Remove-shapes>`__
+- `Mo' Shapes Live <./tools.html#mo-shapes-live>`__
+- `Add Cone Indicator <./tools.html#add-cone-Indicator>`__
+- `Add Cylinder Indicator <./tools.html#add-cylinder-indicator>`__
+- `Add Icosahedron Indicator <./tools.html#add-icosahedron-indicator>`__
+- `Add Knot Indicator <./tools.html#add-Knot-indicator>`__
+- `Add Octahedron Indicator <./tools.html#add-octahedron-indicator>`__
+- `Add Ring Indicator <./tools.html#add-ring-indicator>`__
+- `Add Sphere Indicator <./tools.html#add-sphere-indicator>`__
+- `Add Tetrahedron Indicator <./tools.html#add-tetrahedron-indicator>`__

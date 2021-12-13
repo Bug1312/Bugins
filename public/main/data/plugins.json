@@ -1,0 +1,82 @@
+{
+    "plugins": [{
+            "name": "Blockbench-MDL Exporter",
+            "image": {
+                "type": "url",
+                "image": "/main/images/plugins/mdl.png"
+            },
+            "description": "Export Dalek Mod's MDL format directly from BlockBench!",
+            "docs": "/docs/mdl",
+            "download": {
+                "url": "/plugins/files/Bugin.js",
+                "file": "Bugin.js"
+            }
+        },
+        {
+            "name": "Random Colour",
+            "image": {
+                "type": "fontawesome",
+                "image": "fas fa-palette"
+            },
+            "description": "Randomly colours selected cubes with this handy new tool!",
+            "docs": null,
+            "download": {
+                "url": "/plugins/files/random_colour_tool.js",
+                "file": "random_colour_tool.js"
+            }
+        },
+        {
+            "name": "Mo' Shapes",
+            "image": {
+                "type": "fontawesome",
+                "image": "fas fa-shapes"
+            },
+            "description": "Adds 'illegal' shapes to Blockbench for you to show your friends your crazy side!",
+            "docs": "/docs/moshapes",
+            "download": {
+                "url": "/plugins/files/mo_shapes.js",
+                "file": "mo_shapes.js"
+            }
+        },
+        {
+            "name": "Blocky Forever",
+            "image": {
+                "type": "url",
+                "image": "/main/images/plugins/blocky.png"
+            },
+            "description": "Brings JannisX11's April Fools Blocky feature back into BlockBench!",
+            "docs": null,
+            "download": {
+                "url": "/plugins/files/blocky_forever.js",
+                "file": "blocky_forever.js"
+            }
+        },
+        {
+            "name": "BOBJ Importer",
+            "image": {
+                "type": "google",
+                "image": "insert_drive_file"
+            },
+            "description": "Allows you to import obj files ( A few steps necessary to set up )",
+            "docs": null,
+            "download": {
+                "url": "/plugins/files/bobj_importer.js",
+                "file": "bobj_importer.js"
+            },
+            "error4": true
+        },
+        {
+            "name": "Techne Cube",
+            "image": {
+                "type": "google",
+                "image": "view_in_ar"
+            },
+            "description": "Adds the classic Techne wood block to the scene",
+            "docs": null,
+            "download": {
+                "url": "/plugins/files/techne_cube.js",
+                "file": "techne_cube.js"
+            }
+        }
+    ]
+}

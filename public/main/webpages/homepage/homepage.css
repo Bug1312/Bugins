@@ -1,0 +1,21 @@
+.contentBox {
+    width: 800px;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: relative;
+    top: 150px;
+    margin: auto;
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 1.5rem;
+    color: white;
+    font-family: 'Major Mono Display', monospace;
+}
+
+.contentBox p {
+    font-family: 'Josefin Slab', serif;
+
+}
+
+.sideBar .ad {
+    margin-top: 70%;
+}

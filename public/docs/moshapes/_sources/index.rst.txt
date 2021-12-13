@@ -1,0 +1,19 @@
+Welcome to the Mo' Shapes
+=========================
+
+Download the latest Mo' Shapes `here </INFO/mo_shapes.js>`__
+
+Welcome to the official Mo' Shapes documentation. If you want to create
+shapes that aren't meant for Blockbench IN Blockbench, this is the place
+you want to be!
+
+If there are any bugs or suggestions, message ``Bug1312#2699`` on
+Discord
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   creating
+   tools
+   barmenu
