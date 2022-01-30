@@ -1,15 +1,14 @@
 {
     "plugins": [{
-            "name": "Blockbench-MDL Exporter",
+            "name": "DMJavaJSON",
             "image": {
-                "type": "url",
-                "image": "/main/images/plugins/mdl.png"
+                "type": "fontawesome",
+                "image": "fas fa-bug"
             },
-            "description": "Export Dalek Mod's MDL format directly from BlockBench!",
-            "docs": "/docs/mdl",
+            "description": "Imports and Exports Dalek Mod's model format",
+            "docs": "https://bug.swdteam.com",
             "download": {
-                "url": "/plugins/files/Bugin.js",
-                "file": "Bugin.js"
+                "url": "https://bug.swdteam.com"
             }
         },
         {
@@ -23,6 +22,19 @@
             "download": {
                 "url": "/plugins/files/random_colour_tool.js",
                 "file": "random_colour_tool.js"
+            }
+        },
+        {
+            "name": "Techne Cube",
+            "image": {
+                "type": "google",
+                "image": "view_in_ar"
+            },
+            "description": "Adds the classic Techne wood block to the scene",
+            "docs": null,
+            "download": {
+                "url": "/plugins/files/techne_cube.js",
+                "file": "techne_cube.js"
             }
         },
         {
@@ -66,16 +78,16 @@
             "error4": true
         },
         {
-            "name": "Techne Cube",
+            "name": "Blockbench-MDL Exporter",
             "image": {
-                "type": "google",
-                "image": "view_in_ar"
+                "type": "url",
+                "image": "/main/images/plugins/mdl.png"
             },
-            "description": "Adds the classic Techne wood block to the scene",
-            "docs": null,
+            "description": "Export Dalek Mod's old MDL format directly from BlockBench!",
+            "docs": "/docs/mdl",
             "download": {
-                "url": "/plugins/files/techne_cube.js",
-                "file": "techne_cube.js"
+                "url": "/plugins/files/Bugin.js",
+                "file": "Bugin.js"
             }
         }
     ]
