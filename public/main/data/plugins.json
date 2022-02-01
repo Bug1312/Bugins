@@ -25,6 +25,19 @@
             }
         },
         {
+            "name": "Cardinal",
+            "image": {
+                "type": "google",
+                "image": "border_outer"
+            },
+            "description": "Adds in all cardinal directions on the grid and renders them on-top of everything while facing you",
+            "docs": null,
+            "download": {
+                "url": "/plugins/files/cardinal.js",
+                "file": "cardinal.js"
+            }
+        },
+        {
             "name": "Techne Cube",
             "image": {
                 "type": "google",
