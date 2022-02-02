@@ -1,77 +1,83 @@
 (function() {
 
-    let images = {
-            n: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAABmJLR0QAAAAAAAD5Q7t/AAAANElEQVQY02NgYGBg+A8FDGgAWZyJgUjAhMsEvArxARZkDiMjIyPMZLJNxKqQEQqoZyJFCgGIgxwF+mHVEgAAAABJRU5ErkJggg==",
-            e: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAABmJLR0QAAAAAAAD5Q7t/AAAAKElEQVQI122MsQ0AMAyDIP//7C7N4pbJwhICJAkXVVoCzI4+HuGveQBYqxP57rdQtQAAAABJRU5ErkJggg==",
-            s: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAABmJLR0QAAAAAAAD5Q7t/AAAAJ0lEQVQI13WLsQ0AMAyDQOr/L7tLvUQpozECJAkPVeYI4PdZKs+WX0ljE/tp/tYzAAAAAElFTkSuQmCC",
-            w: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAABmJLR0QAAAAAAAD5Q7t/AAAANklEQVQY02NgIBIw/v///z8DAwMDIyMjIzYFMHkmYk1kwmYCzBS8Cok2kWKFON2GzifdREIAAKqsH/JDV8CHAAAAAElFTkSuQmCC"
-        },
-        buildGridCopy = buildGrid;
+	let images = {
+			north: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKAQMAAAC3/F3+AAAABlBMVEVHcEz///+flKJDAAAAAXRSTlMAQObYZgAAABVJREFUCNdjSGxgAKJKMEoHo0QEAgCIGwkHoSKsGQAAAABJRU5ErkJggg",
+			east : "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFAQMAAAC3obSmAAAABlBMVEVHcEz///+flKJDAAAAAXRSTlMAQObYZgAAABBJREFUCNdjKGBwYEgA4gIACMoBwSwi6WsAAAAASUVORK5CYII",
+			south: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFAQMAAAC3obSmAAAABlBMVEVHcEz///+flKJDAAAAAXRSTlMAQObYZgAAABJJREFUCNdjKGBwYChgEGAoAAAIigGhv1KChwAAAABJRU5ErkJggg",
+			west : "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKAQMAAAC3/F3+AAAABlBMVEVHcEz///+flKJDAAAAAXRSTlMAQObYZgAAABhJREFUCNdjYGBgOHAAhM4gIWMGEGJgAACnnQmX+CnbdwAAAABJRU5ErkJggg"
+		},
+		buildGridCopy = buildGrid;
 
-    Plugin.register('cardinal', {
-        title: 'Cardinal',
-        author: 'Bug1312',
-        description: 'Adds in all cardinal directions on the grid and renders them on-top of everything while facing you',
-        icon: 'border_outer',
-        version: '1.0.0',
-        variant: 'both',
-        onload() {
-            window.buildGrid = function() {
-                // Default grid
-                buildGridCopy();
+	Plugin.register("cardinal", {
+		title: "Cardinal",
+		author: "Bug1312",
+		description: "Adds in all cardinal directions on the grid and renders them on-top of everything while facing the camera.",
+		about: "If you wish to change the color, use custom CSS to set the variable 'cardinal' to any color!",
+		icon: "border_outer",
+		version: "1.0.0",
+		variant: "both",
+		onload() {
+			window.buildGrid = function() {
+				// Default grid
+				buildGridCopy();
 
-                // Hide default North mark
-                three_grid.children.find(e => e.type == "Mesh").visible = false;
+				// Hide default north mark
+				three_grid.children.find(c => c.material === Canvas.northMarkMaterial).visible = false;
 
-                // Generate other marks
-                addMark(images.n, [0, 0, -9.5]);
-                addMark(images.e, [9.5, 0, 0]);
-                addMark(images.s, [0, 0, 9.5]);
-                addMark(images.w, [-9.5, 0, 0]);
-            }
-            buildGrid();
-        },
-        onunload() {
-            window.buildGrid = buildGridCopy;
-        },
-        onuninstall() {
-            buildGrid();
-        }
-    });
+				// Generate other marks
+				addMark(images.north, [ 0.0, -9.5 ]);
+				addMark(images.east,  [ 9.5,  0.0 ]);
+				addMark(images.south, [ 0.0,  9.5 ]);
+				addMark(images.west,  [-9.5,  0.0 ]);
+			};
+			buildGrid();
+		},
+		onunload() { window.buildGrid = buildGridCopy },
+		onuninstall() { buildGrid() }
+	});
 
-    function addMark(src, pos) {
-        let img = new Image(),
-            tex = new THREE.Texture(img);
+	function addMark(src, pos) {
+		let img = new Image(),
+			tex = new THREE.Texture(img),
+			color = getComputedStyle(document.body).getPropertyValue("--cardinal").replace(/^\s*/, "");
 
-        img.src = src;
-        img.tex = tex;
-        img.tex.magFilter = THREE.NearestFilter;
-        img.tex.minFilter = THREE.NearestFilter;
-        img.onload = function() {
-            this.tex.needsUpdate = true;
-        }
-        let material = new THREE.MeshBasicMaterial({
-                map: tex,
-                transparent: true,
-                side: THREE.DoubleSide,
-                alphaTest: 0.2
-            }),
-            mark = new THREE.Mesh(new THREE.PlaneGeometry(2.4, 2.4), material);
+		if (color === "") color = "#FFF";
 
-        mark.renderOrder = 999;
-        mark.material.depthTest = false;
-        mark.material.depthWrite = false;
-        mark.onBeforeRender = function(renderer) {
-            this.lookAt(main_preview.camPers.position);
-            renderer.clearDepth();
-        };
+		// Set textures to src
+		img.src = src;
+		img.tex = tex;
 
-        if (Format.centered_grid) mark.position.set(pos[0], pos[1], pos[2]);
-        else mark.position.set(pos[0] + 8, pos[1], pos[2] + 8);
+		// Render pixelated
+		img.tex.magFilter = THREE.NearestFilter;
+		img.tex.minFilter = THREE.NearestFilter;
 
-        mark.rotation.x = Math.PI / -2;
+		// When loaded, render texture but only do so after onBeforeRender()
+		//	Results in less flashing
+		img.onload = function() { this.tex.needsUpdate = true };
 
-        three_grid.add(mark);
-    };
+		// Setup cardinal mark
+		let geometry = new THREE.PlaneGeometry(2.4, 2.4),
+			material = new THREE.MeshBasicMaterial({
+				map: tex,
+				transparent: true,
+				color: new THREE.Color(color)
+			}),
+			mark = new THREE.Mesh(geometry, material);
+
+		// Render on top
+		mark.renderOrder = 10;
+		mark.material.depthTest  = false;
+		mark.material.depthWrite = false;
+
+		// Look at camera
+		mark.onBeforeRender = function() { this.lookAt(main_preview.camera.position) };
+
+		// Move marks based on grid positioning
+		if (Format.centered_grid) mark.position.set(pos[0], 0, pos[1]);
+		else mark.position.set(pos[0] + 8, 0, pos[1] + 8);
+
+		// Add to grid
+		three_grid.add(mark);
+	}
 
 })();
