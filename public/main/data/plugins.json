@@ -82,7 +82,7 @@
                 "type": "google",
                 "image": "insert_drive_file"
             },
-            "description": "Allows you to import obj files ( A few steps necessary to set up )",
+            "description": "Allowed you to view obj files prior to 4.0 ( A few steps necessary to set up )",
             "docs": null,
             "download": {
                 "url": "/plugins/files/bobj_importer.js",

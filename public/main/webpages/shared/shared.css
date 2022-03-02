@@ -1,3 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
 :root {
     --background_main: #23272A;
     --background_secondary: #99AAB5;
@@ -8,6 +12,13 @@ body,
 html {
     margin: 0;
     background: url('/main/images/other/numbers.png'), var(--background_secondary);
+}
+
+.hamburber {
+    position: fixed;
+    top: 36px;
+    left: 36px;
+    
 }
 
 .sideBar {
@@ -64,3 +75,11 @@ html {
     transform: translateX(10px);
     transition: 200ms linear;
 }
+
+@media only screen and (min-width: 768px) {
+    *[mobile] { display: none }
+}
+
+/* @media only screen and (max-width: 767px) {
+    *[desktop] { display: none }
+} */
