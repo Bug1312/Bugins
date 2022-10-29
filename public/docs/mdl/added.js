@@ -43,5 +43,5 @@ if (document.title == 'Blockbench-MDL Exporter') {
 document.head.innerHTML += `
 <meta property="og:title" content="Blockbench MDL Exporter">
 <meta property="og:description" content="Documentation for Bug1312's Blockbench MDL Exporter">
-<meta property="og:image" content="/main/images/plugins/mdl.png">
+<meta property="og:image" content="/docs/mdl/icon.png">
 `;
