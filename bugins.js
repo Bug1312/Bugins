@@ -1,12 +1,14 @@
-const express = require("express"),
-    app = express(),
-    bodyParser = require("body-parser");
+const express = require("express");
+const fs = require("fs");
+const bodyParser = require("body-parser");
+
+const app = express();
 require('dotenv').config();
 
 // Load website
 {
-    app.use(express.static(__dirname + "/public"));
-    app.use(bodyParser.urlencoded({
+  app.use(express.static(__dirname + "/dist"));
+  app.use(bodyParser.urlencoded({
         extended: true
     }));
     app.use(bodyParser.json());
@@ -19,19 +21,11 @@ require('dotenv').config();
     });
 
     app.get("/", (request, response) => {
-        response.sendFile(__dirname + "/public/main/webpages/homepage/index.html")
+        response.sendFile(__dirname + "/dist/index.html")
     });
 
     app.get("/plugins", (request, response) => {
-        response.sendFile(__dirname + "/public/main/webpages/plugins/index.html")
-    });
-
-    app.get("/docs/mdl", (request, response) => {
-        response.sendFile(__dirname + "/public/docs/mdl")
-    });
-
-    app.get("/docs/moshapes", (request, response) => {
-        response.sendFile(__dirname + "/public/docs/moshapes")
+        response.sendFile(__dirname + "/dist/index.html")
     });
 
 }
@@ -39,7 +33,6 @@ require('dotenv').config();
 // SSL
 {
     const https = require('https');
-    const fs = require('fs');
 
     try {
         const httpsCertOptions = {
