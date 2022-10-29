@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@c/*": ["src/components/*"],
+      "@s/*": ["src/screens/*"],
+      "@a/*": ["src/assets/*"]
+    },
+    "allowJs": true,
+    "skipLibCheck": true
+  },
+  "vueCompilerOptions": {
+    "experimentalDisableTemplateSupport": true
+  }
+}

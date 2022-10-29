@@ -1,13 +1,26 @@
 {
-    "name": "bugins",
-    "version": "1.0.0",
-    "description": "",
-    "main": "bugins.js",
-    "author": "Bug1312",
-    "license": "MIT",
-    "dependencies": {
-        "body-parser": "^1.19.0",
-        "dotenv": "^10.0.0",
-        "express": "^4.17.1"
-    }
+  "name": "bugins",
+  "description": "Website for Bug1312's Blockbench plugins and documentation",
+  "version": "1.0.0",
+  "main": "bugins.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vue": "3.2.39",
+    "vue-router": "4.1.5",
+    "body-parser": "1.19.0",
+    "dotenv": "10.0.0",
+    "express": "4.17.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "3.1.0",
+    "autoprefixer": "10.4.11",
+    "postcss": "8.4.16",
+    "tailwind-heropatterns": "0.0.8",
+    "tailwindcss": "3.1.8",
+    "vite": "3.1.1"
+  }
 }
