@@ -3,7 +3,7 @@ Plugin.register('bobj_importer', {
     author: 'Bug1312',
     variant: 'both',
     icon: 'insert_drive_file',
-    description: 'Imports .bobj files, click icon/arrow for directions',
+    description: 'Imports .bobj files, click /icon/arrow for directions',
     about: 'Zip a obj file named "model.obj" with a png file named "tex.png" and rename the extention of the zip to .bobj'
 });
 
