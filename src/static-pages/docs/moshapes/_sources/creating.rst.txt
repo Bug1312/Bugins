@@ -1,0 +1,35 @@
+Creating Shapes
+===============
+
+Creating shapes is as simple as a click of a button or swish of the keyboard! Every shape follows the same format via it's respective `identifier <#identifiers>`__. You can choose to create a shape by creating an `identifier <#identifiers>`__ from scratch, or using a button in the `bar menu <./barmenu.html>`_
+
+Identifiers
+-----------
+
+Identifiers are cubes in Blockbench with names following the Mo' Shapes format that tells the Mo' Shapes plugin where to place shapes. Identifiers can be rotated, but it is best for them to be in the root folder and have an origin centered to the identifier.
+
+Format
+------
+
+The format for Mo' Shapes goes as follows: ``Shape<SHAPE>[*<COLOR>[*]]``
+
+- Things inside square brackets ``[]`` are optional. 
+- Things inside chevrons ``<>`` and in all caps are variables
+
+Format Explanation
+------------------
+- ``<SHAPE>``
+
+	\- Type: `String <https://en.wikipedia.org/wiki/String\_%28computer\_science%29>`__
+	
+	\- this is the type of shape, shapes available are ``Sphere``, ``Cylinder``, ``Icosahedron``, ``Cone``, ``Octahedron``, ``Tetrahedron``, ``Ring``, and ``Knot``
+- ``<COLOR>``
+
+	\-  Type: `Color <https://en.wikipedia.org/wiki/Web\_colors>`__
+	 
+	\- This is replaced with any way to specify color as you would do with CSS, either by having a name, hex code, rgb function, etc. You can check out this tutorial on `CSS <https://www.w3schools.com/colors/default.asp>`__ colors if you need help 
+- ``Glow``
+
+	\- Type: `Boolean <https://en.wikipedia.org/wiki/Boolean\_data\_type>`__
+	
+	\- This true/false statement is represented by if another underscore is added to the name or not added. When enabled, shape's materials do not have shading. Most people will set the name to ``Shape<SHAPE>\_<COLOR>\_glow``, but the plugin will only need to identify the second underscore. You can not have a glow without a color.

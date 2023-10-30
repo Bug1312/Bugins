@@ -1,0 +1,17 @@
+<div class="w-full rounded-3xl bg-gray-500">
+  <div class="flex p-4 gap-x-4">
+    <div [ngSwitch]="plugin.imageType" aria-hidden="true" class="select-none w-28 h-28 flex-shrink-0 bg-gray-400 bg-opacity-50 rounded-3xl overflow-hidden">
+      <img *ngSwitchCase="'url'" [src]="plugin.image" class="w-full h-full"/>
+      <i *ngSwitchCase="'fontawesome'" class="w-full h-full text-[7rem] scale-75 text-center text-white fa {{plugin.image}}" ></i>
+      <i *ngSwitchCase="'google'" class="w-full h-full text-[7rem] text-center text-white scale-95 material-icons">{{ plugin.image }}</i>
+    </div>
+    <div class="text-white">
+      <p class="font-bold text-2xl">{{plugin.title}}</p>
+      <p>{{plugin.description}}</p>
+    </div>
+    <div class="ml-auto grid gap-y-4">
+      <a [href]="plugin.downloadURL" [download]="plugin.fileName" class="w-48 flex items-center justify-center select-none cursor-pointer transition-colors bg-emerald-400 hover:bg-emerald-500 focus:bg-emerald-500 rounded-xl">Download</a>
+      <a [href]="plugin.moreInfo" [ngClass]="{'invisible': !plugin.moreInfo}" class="w-48 flex items-center justify-center select-none cursor-pointer transition-colors bg-emerald-400 hover:bg-emerald-500 focus:bg-emerald-500 rounded-xl">More Info</a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,60 @@
+Tools
+=====
+
+Tools can be found by searching for them or using the `Mo' Shapes Bar Menu <./barmenu.html>`__
+
+Load Shapes
+-----------
+
+This tool is used for loading or reloading shapes
+
+Remove Shapes
+-------------
+
+This tool is used for removing all custom shapes
+
+Mo' Shapes Live
+---------------
+
+This tool will set a property in your format that will update run the load shapes tool every two seconds. It does have a warning though, if there are multiple shapes in the current project then it can reduce frame rate drawing all of the shapes repeatedly.
+
+Add Cone Indicator
+------------------
+
+This adds a cone indicator to the project
+
+Add Cylinder Indicator
+----------------------
+
+This adds a cylinder indicator to the project
+
+Add Icosahedron Indicator
+-------------------------
+
+This adds a icosahedron indicator to the project
+
+Add Knot Indicator
+------------------
+
+This adds a knot indicator to the project
+
+Add Octahedron Indicator
+------------------------
+
+This adds a octahedron indicator to the project
+
+Add Ring Indicator
+------------------
+
+This adds a ring indicator to the project
+
+Add Sphere Indicator
+--------------------
+
+This adds a sphere indicator to the project
+
+Add Tetrahedron Indicator
+-------------------------
+
+This adds a tetrahedron indicator to the project
+

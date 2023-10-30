@@ -1,0 +1,77 @@
+<div class="flex w-screen h-screen">
+  <div class="hidden p-6 w-min h-full text-white bg-gray-700 lg:block font-mmd">
+    <div class="cursor-default">
+      <p class="text-5xl font-bold">Bug's Plugins</p>
+      <p class="mt-2 font-mono text-xs text-center">( They're called 'Bugins' )</p>
+    </div>
+    <ul class="flex flex-col gap-2 mt-12 text-3xl whitespace-nowrap">
+      <li class="transition-all cursor-pointer hover:text-emerald-600 hover:translate-x-1">
+        <a [routerLink]="'/'" class="block w-full h-full">
+          <span class="inline-block mr-4 w-6">></span>About
+        </a>
+      </li>
+      <li class="transition-all cursor-pointer hover:text-emerald-600 hover:translate-x-1">
+        <a [routerLink]="'/blockbench'" class="block w-full h-full">
+          <span class="inline-block mr-4 w-6">></span>Blockbench
+        </a>
+      </li>
+      <li class="transition-all cursor-pointer hover:text-emerald-600 hover:translate-x-1">
+        <a [routerLink]="'/dalek-mod'" class="block w-full h-full">
+          <span class="inline-block mr-4 w-6">></span>Dalek mod
+        </a>
+      </li>
+      <li class="mt-6 transition-all cursor-pointer hover:text-emerald-600 hover:translate-x-1">
+        <a [href]="coffee" class="block w-full h-full">
+          <svg class="inline-block mr-4 w-6 h-6" viewBox="0 0 24 24">
+            <use href="assets/icons/buymeacoffee.svg#icon"></use>
+          </svg>
+          <span>Donate</span>
+        </a>
+      </li>
+      <li class="transition-all cursor-pointer hover:text-emerald-600 hover:translate-x-1">
+        <a [href]="paypal" class="block w-full h-full">
+          <svg class="inline-block mr-4 w-6 h-6" viewBox="0 0 24 24">
+            <use href="assets/icons/paypal.svg#icon"></use>
+          </svg>
+          <span>Donate</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="p-4 w-24 h-full text-white bg-gray-700 lg:hidden font-mmd">
+    <div class="cursor-default">
+      <p class="text-4xl font-bold">BP</p>
+    </div>
+    <ul class="flex flex-col gap-2 items-center mt-12 text-3xl whitespace-nowrap">
+      <li>
+        <a [routerLink]="'/'" title="about" class="flex justify-center items-center w-16 h-16 bg-gray-600 rounded-lg">A</a>
+      </li>
+      <li>
+        <a [routerLink]="'/blockbench'" title="blockbench" class="flex justify-center items-center w-16 h-16 bg-gray-600 rounded-lg">B</a>
+      </li>
+      <li>
+        <a [routerLink]="'/dalek-mod'" title="dalek mod" class="flex justify-center items-center w-16 h-16 bg-gray-600 rounded-lg">DM</a>
+      </li>
+      <li class="flex justify-center items-center mt-6 w-16 h-16 bg-gray-600 rounded-lg">
+        <a [href]="coffee" class="flex justify-center items-center p-4 w-16 h-16 bg-gray-600 rounded-lg">
+          <svg class="w-full h-full" viewBox="0 0 24 24">
+            <use href="assets/icons/buymeacoffee.svg#icon"></use>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a [href]="paypal" class="flex justify-center items-center p-4 w-16 h-16 bg-gray-600 rounded-lg">
+          <svg class="w-full h-full" viewBox="0 0 24 24">
+            <use href="assets/icons/paypal.svg#icon"></use>
+          </svg>
+        </a>
+      </li>
+
+    </ul>
+  </div>
+
+  <div class="overflow-y-auto flex-grow w-full h-screen">
+    <router-outlet></router-outlet>
+  </div>
+</div>
