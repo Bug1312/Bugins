@@ -9,6 +9,7 @@ import { BlockbenchComponent } from './screens/blockbench/blockbench.component';
 import { DalekModComponent } from './screens/dalek-mod/dalek-mod.component';
 import { CircuitBoardLayout } from './layouts/circuit-board/circuit-board.component';
 import { PluginCardComponent } from './components/plugin-card/plugin-card.component';
+import { MinecraftComponent } from 'src/app/screens/minecraft/minecraft.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { PluginCardComponent } from './components/plugin-card/plugin-card.compon
     BlockbenchComponent,
     DalekModComponent,
     CircuitBoardLayout,
+    MinecraftComponent,
     PluginCardComponent,
   ],
   imports: [

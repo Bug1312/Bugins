@@ -1,17 +1,17 @@
-<div class="w-full rounded-3xl bg-gray-500">
-  <div class="grid grid-cols-3 md:flex p-4 gap-4">
-    <div [ngSwitch]="plugin.imageType" aria-hidden="true" class="select-none w-full aspect-square md:w-28 md:h-28 flex-shrink-0 bg-gray-400 bg-opacity-50 rounded-lg md:rounded-3xl overflow-hidden">
-      <img *ngSwitchCase="'url'" [src]="plugin.image" class="w-full h-full"/>
+<div class="w-full bg-gray-500 rounded-3xl">
+  <div class="grid grid-cols-3 gap-4 p-4 md:flex">
+    <div [ngSwitch]="plugin.imageType" aria-hidden="true" class="overflow-hidden flex-shrink-0 w-full bg-gray-400 bg-opacity-50 rounded-lg select-none aspect-square md:w-28 md:h-28 md:rounded-3xl">
+      <img *ngSwitchCase="'url'" [src]="plugin.image" [ngClass]="{'pixelated': plugin.sharp}" class="w-full h-full"/>
       <i *ngSwitchCase="'fontawesome'" class="w-full h-full text-[2.75rem] sm:text-[7rem] scale-75 text-center text-white fa {{plugin.image}}" ></i>
       <i *ngSwitchCase="'google'" class="w-full h-full text-[2.75rem] sm:text-[7rem] text-center text-white scale-95 material-icons">{{ plugin.image }}</i>
     </div>
-    <div class="text-white md:block contents">
-      <p class="font-bold text-lg col-span-2 sm:text-2xl">{{plugin.title}}</p>
+    <div class="contents text-white md:block">
+      <p class="col-span-2 text-lg font-bold sm:text-2xl">{{plugin.title}}</p>
       <p class="col-span-full">{{plugin.description}}</p>
     </div>
-    <div class="md:ml-auto md:h-28 grid gap-y-2 md:gap-y-4 col-span-full">
-      <a [href]="plugin.downloadURL" [download]="plugin.fileName" class="w-full py-2 md:py-0 md:w-48 flex items-center justify-center select-none cursor-pointer transition-colors bg-emerald-400 hover:bg-emerald-500 focus:bg-emerald-500 rounded-xl">Download</a>
-      <a [href]="plugin.moreInfo" [ngClass]="{'invisible': !plugin.moreInfo}" class="w-full py-2 md:py-0 md:w-48 flex items-center justify-center select-none cursor-pointer transition-colors bg-emerald-400 hover:bg-emerald-500 focus:bg-emerald-500 rounded-xl">More Info</a>
+    <div class="grid col-span-full gap-y-2 md:ml-auto md:h-28 md:gap-y-4">
+      <a [href]="plugin.downloadURL" [download]="plugin.fileName" class="flex justify-center items-center py-2 w-full bg-emerald-400 rounded-xl transition-colors cursor-pointer select-none md:py-0 md:w-48 hover:bg-emerald-500 focus:bg-emerald-500">Download</a>
+      <a [href]="plugin.moreInfo" [ngClass]="{'invisible': !plugin.moreInfo}" class="flex justify-center items-center py-2 w-full bg-emerald-400 rounded-xl transition-colors cursor-pointer select-none md:py-0 md:w-48 hover:bg-emerald-500 focus:bg-emerald-500">More Info</a>
     </div>
   </div>
 </div>
