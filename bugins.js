@@ -6,7 +6,7 @@ const app = express();
 
 // Load website
 {
-  app.use(express.static(__dirname + "/dist/bugins-site/"));
+  app.use(express.static(__dirname + "/dist/bugins-site/browser/"));
   app.use(bodyParser.urlencoded({
         extended: true
     }));
@@ -15,16 +15,8 @@ const app = express();
 
 // Pages 
 {
-    app.get("/", (request, response) => {
-        response.sendFile(__dirname + "/dist/bugins-site/index.html")
-    });
-
-    app.get("/blockbench", (request, response) => {
-        response.sendFile(__dirname + "/dist/bugins-site/index.html")
-    });
-
-    app.get("/dalek-mod", (request, response) => {
-        response.sendFile(__dirname + "/dist/bugins-site/index.html")
+    app.get("*", (request, response) => {
+        response.sendFile(__dirname + "/dist/bugins-site/browser/index.html")
     });
 
 }
