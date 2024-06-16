@@ -1,9 +1,12 @@
+import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-plugin-card',
   templateUrl: './plugin-card.component.html',
-  styleUrls: ['./plugin-card.component.css']
+  styleUrls: ['./plugin-card.component.css'],
+  standalone: true,
+  imports: [CommonModule]
 })
 export class PluginCardComponent {
   @Input({required: true}) plugin!: Plugin;

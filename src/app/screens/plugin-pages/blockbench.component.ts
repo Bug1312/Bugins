@@ -1,14 +1,15 @@
 import { Component } from '@angular/core';
 import { Plugin } from '../../components/plugin-card/plugin-card.component';
+import { PluginPageComponent } from '../../components/plugin-page/plugin-page.component';
 
 @Component({
-  selector: 'app-blockbench',
-  templateUrl: './blockbench.component.html',
-  styleUrls: ['./blockbench.component.css']
+  template: '<app-plugin-page [plugins]="plugins" />',
+  standalone: true,
+  imports: [PluginPageComponent],
 })
 export class BlockbenchComponent {
 
-   plugins: Plugin[] = [
+  plugins: Plugin[] = [
     {
       title: "DMJavaJSON",
       image: "fas fa-bug",
@@ -81,6 +82,5 @@ export class BlockbenchComponent {
       downloadURL: "plugins/files/mo_shapes.js",
     },
   ];
-  
 
 }

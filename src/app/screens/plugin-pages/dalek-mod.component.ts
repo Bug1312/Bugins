@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { Plugin } from 'src/app/components/plugin-card/plugin-card.component';
+import { Plugin } from '../../components/plugin-card/plugin-card.component';
+import { PluginPageComponent } from '../../components/plugin-page/plugin-page.component';
 
 @Component({
-  selector: 'app-dalek-mod',
-  templateUrl: './dalek-mod.component.html',
-  styleUrls: ['./dalek-mod.component.css']
+  template: '<app-plugin-page [plugins]="plugins" />',
+  standalone: true,
+  imports: [PluginPageComponent],
 })
 export class DalekModComponent {
 

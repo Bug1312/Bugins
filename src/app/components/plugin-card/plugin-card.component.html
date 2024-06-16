@@ -1,9 +1,11 @@
 <div class="w-full bg-gray-500 rounded-3xl">
   <div class="grid grid-cols-3 gap-4 p-4 md:flex">
-    <div [ngSwitch]="plugin.imageType" aria-hidden="true" class="overflow-hidden flex-shrink-0 w-full bg-gray-400 bg-opacity-50 rounded-lg select-none aspect-square md:w-28 md:h-28 md:rounded-3xl">
-      <img *ngSwitchCase="'url'" [src]="plugin.image" [ngClass]="{'pixelated': plugin.sharp}" class="w-full h-full"/>
-      <i *ngSwitchCase="'fontawesome'" class="w-full h-full text-[2.75rem] sm:text-[7rem] scale-75 text-center text-white fa {{plugin.image}}" ></i>
-      <i *ngSwitchCase="'google'" class="w-full h-full text-[2.75rem] sm:text-[7rem] text-center text-white scale-95 material-icons">{{ plugin.image }}</i>
+    <div aria-hidden="true" class="overflow-hidden flex-shrink-0 w-full bg-gray-400 bg-opacity-50 rounded-lg select-none aspect-square md:w-28 md:h-28 md:rounded-3xl">
+      @switch(plugin.imageType) {
+        @case('url') { <img [src]="plugin.image" [ngClass]="{'pixelated': plugin.sharp}" class="w-full h-full"/>  }
+        @case('fontawesome') { <i [ngClass]="plugin.image" class="w-full h-full text-[2.75rem] sm:text-[7rem] scale-75 text-center text-white fa" ></i> }
+        @case('google') { <i class="w-full h-full text-[2.75rem] sm:text-[7rem] text-center text-white scale-95 material-icons">{{ plugin.image }}</i>  }
+      }
     </div>
     <div class="contents text-white md:block">
       <p class="col-span-2 text-lg font-bold sm:text-2xl">{{plugin.title}}</p>
