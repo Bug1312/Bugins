@@ -10,6 +10,5 @@ import { RouterModule } from '@angular/router';
   imports: [CommonModule, RouterModule]
 })
 export class NavigationLayout {
-  paypal: string = 'https://www.paypal.com/donate/?business=S45YHKRWDHALG&no_recurring=1&currency_code=USD';
-  coffee: string = 'https://www.buymeacoffee.com/bug1312';
+  github: string = 'https://github.com/sponsors/Bug1312';
 }
