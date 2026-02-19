@@ -12,6 +12,14 @@ export class MinecraftComponent {
   plugins: Plugin[] =
     [
       {
+        "title": "Client Base",
+        "image": "https://cdn.modrinth.com/data/hPR6X8fV/1eeefe153063add8c5dbd851074c25cff1c1bdba_96.webp",
+        "imageType": "url",
+        "description": "Provides the player with a client-only room that dependencies can hook into for special functionality",
+        "moreInfo": "https://modrinth.com/mod/client_base",
+        "downloadURL": "https://modrinth.com/mod/client_base"
+      },
+      {
         "title": "Dalek Mod",
         "image": "https://media.forgecdn.net/avatars/thumbnails/601/706/256/256/637981122306949610.png",
         "imageType": "url",
