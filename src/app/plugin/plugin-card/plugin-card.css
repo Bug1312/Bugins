@@ -1,0 +1,25 @@
+@reference "../../../styles.css";
+
+.btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-block: calc(2 * var(--spacing));
+	width: 100%;
+	background-color: var(--color-emerald-400);
+	border-radius: var(--radius-xl);
+	transition-property: color, background-color;
+	transition: 300ms ease-in-out;
+	cursor: pointer;
+	user-select: none;
+
+	&:hover,
+	&:focus {
+		background-color: var(--color-emerald-500);
+	}
+
+	@variant md {
+		padding-block: 0;
+		width: calc(48 * var(--spacing));
+	}
+}
