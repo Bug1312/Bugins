@@ -1,6 +1,6 @@
 <div class="grid grid-cols-3 gap-4 p-4 md:flex w-full bg-gray-550 rounded-3xl">
 	<div class="overflow-hidden shrink-0 w-full bg-gray-400/50 bg-opacity-50 rounded-lg select-none aspect-square md:w-28 md:h-28 md:rounded-3xl">
-		<img [src]="plugin().image" alt="" [class.pixelated]="plugin().sharp" [class.p-2]="plugin().pad === 2" [class.p-4]="plugin().pad === 4" class="w-full h-full" />
+		<img fetchpriority=high [src]="plugin().image" alt="" [class.pixelated]="plugin().sharp" [class.p-2]="plugin().pad === 2" [class.p-4]="plugin().pad === 4" class="w-full h-full" />
 	</div>
 	<div class="contents text-white md:block">
 		<h3 class="col-span-2 text-lg font-bold sm:text-2xl">{{ plugin().title }}</h3>

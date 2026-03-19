@@ -31,5 +31,6 @@ export const routes: Routes = [
 				data: { plugins: dalekMod, h2: 'Dalek Mod Add-ons', description: 'Minecraft: Java Edition 1.16.5 mods by Bug1312 meant to be paired with Dalek Mod. Expand your Doctor Who gameplay with >40 new features, fixes, and gags.' }
 			 },
 		],
-	}
+	},
+	{ path: '**', redirectTo: '' }
 ];

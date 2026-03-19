@@ -34,6 +34,11 @@
 	--color-gray-550: #4d596a;
 }
 
+html {
+	overflow: hidden;
+	color-scheme: dark;
+}
+
 body {
 	font-family: var(--font-lato)
 }

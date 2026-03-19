@@ -15,6 +15,7 @@
 	align-items: center;
 	padding-block: calc(2 * var(--spacing));
 	width: 100%;
+	color: black;
 	background-color: var(--color-emerald-400);
 	border-radius: var(--radius-xl);
 	transition: background-color 150ms ease-in-out;
