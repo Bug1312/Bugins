@@ -1,11 +1,45 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
-
 @import 'tailwindcss';
 
+@font-face {
+	font-family: 'Josefin Slab';
+	src: url('/assets/fonts/JosefinSans-SemiBold.ttf');
+}
+
+@font-face {
+	font-family: 'Major Mono Display';
+	src: url('/assets/fonts/MajorMonoDisplay-Regular.ttf');
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Lato';
+	src: url('/assets/fonts/Lato-Regular.ttf');
+	font-style: normal;
+	font-weight: 600;
+}
+
+@font-face {
+	font-family: 'Lato';
+	src: url('/assets/fonts/Lato-Bold.ttf');
+	font-style: bold;
+	font-weight: 800;
+}
+
 @theme {
-	--font-josefin: 'Josefin Slab', monospace;
-	--font-mmd: 'Major Mono Display', sans-serif;
-	--font-lato: 'Lato' sans-serif;
+	--font-josefin: 'Josefin Slab', monospace, ui-monospace;
+	--font-mmd: 'Major Mono Display', monospace, ui-monospace;
+	--font-lato: 'Lato' sans-serif, ui-sans-serif;
+
+	--color-gray-750: #2e3847;
+	--color-gray-550: #4d596a;
+}
+
+body {
+	font-family: var(--font-lato)
+}
+
+@media (prefers-reduced-motion: reduce) {
+	* {
+		transition: none !important;
+	}
 }

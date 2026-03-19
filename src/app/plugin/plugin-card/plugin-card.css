@@ -1,5 +1,14 @@
 @reference "../../../styles.css";
 
+.pixelated {
+	-ms-interpolation-mode: nearest-neighbor;
+	image-rendering: -webkit-optimize-contrast;
+	image-rendering: -moz-crisp-edges;
+	image-rendering: -o-pixelated;
+	image-rendering: pixelated;
+	image-rendering: crisp-edges;
+}
+
 .btn {
 	display: flex;
 	justify-content: center;
@@ -8,8 +17,7 @@
 	width: 100%;
 	background-color: var(--color-emerald-400);
 	border-radius: var(--radius-xl);
-	transition-property: color, background-color;
-	transition: 300ms ease-in-out;
+	transition: background-color 150ms ease-in-out;
 	cursor: pointer;
 	user-select: none;
 

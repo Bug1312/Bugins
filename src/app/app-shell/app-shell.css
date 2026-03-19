@@ -1,3 +1,65 @@
+@reference '../../styles.css';
+
 .bg-hero-circuit-board-gray-500 {
 	background-image: url('/assets/background.svg');
+}
+
+nav li {
+
+	&>a {
+		display: block;
+		outline: none;
+	}
+
+	& a>.icon {
+		display: inline;
+		aspect-ratio: 1;
+		width: calc(8 * var(--spacing));
+
+		@variant md {
+			width: calc(6 * var(--spacing));
+			margin-right: calc(4 * var(--spacing));
+		}
+	}
+
+	&:hover,
+	&:has(a:focus-visible) {
+		color: var(--color-emerald-500);
+	}
+
+	@variant md {
+		display: block;
+		width: 100%;
+		transition: all 100ms ease-in;
+		cursor: pointer;
+
+		&:hover,
+		&:has(a:focus-visible) {
+			transform: translateX(var(--spacing));
+		}
+
+		& a>.with-arrow::before {
+			content: '>';
+			display: inline-block;
+			margin-right: calc(4 * var(--spacing));
+			width: calc(6 * var(--spacing));
+			height: calc(6 * var(--spacing));
+		}
+	}
+
+	@variant max-md {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: calc(16 * var(--spacing));
+		height: calc(16 * var(--spacing));
+		background-color: var(--color-gray-600);
+		border-radius: var(--radius-lg);
+
+		&:hover,
+		&:has(a:focus-visible) {
+			background-color: var(--color-gray-800);
+		}
+	}
+
 }

@@ -1,5 +1,8 @@
-<div class="grid gap-4 p-4 pb-8 w-full sm:p-12">
+<h2 class="sr-only">{{ h2() }}</h2>
+<ul class="grid gap-4 p-4 pb-8 w-full sm:p-12">
 	@for (plugin of plugins(); track plugin.title) {
-		<app-plugin-card [plugin]="plugin" />
+		<li>
+			<app-plugin-card [plugin]="plugin" />
+		</li>
 	}
-</div>
+</ul>
